@@ -1,0 +1,1003 @@
+
+*,*::after,*::before{
+  margin: 0px;
+  padding: 0;
+  box-sizing: inherit;
+}
+#cta{
+
+  padding: 7% 15%;
+  background-color: #ff4c68;
+  color: #fff;
+  text-align: center;
+}
+
+html{
+  font-size: 62.5%;
+}
+body{
+  font-family: 'Lato',sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  box-sizing: border-box;
+}
+/* nav */
+.navi-icon{
+  position: relative;
+  margin-top: 3.5rem;
+}
+.navi-icon,.navi-icon::before,.navi-icon::after{
+width: 3rem;
+height: .2rem;
+background-color: #333;
+display: inline-block;
+}
+.navi-icon::before,.navi-icon::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all .2s;
+}
+.navi-icon::before{
+    position: absolute;
+top: -.8rem;
+}
+.navi-icon::after{
+    position: absolute;
+top: .8rem;
+}
+.navi-button:hover .navi-icon::before{
+  top:-1rem;
+}
+.navi-button:hover .navi-icon::after{
+  top:1rem;
+}
+.navi-checkbox:checked + .navi-button .navi-icon{  /* +  is adjacent child */
+  background-color: transparent;
+}
+.navi-checkbox:checked + .navi-button .navi-icon::before{
+top: 0;
+  transform: rotate(135deg);
+}
+.navi-checkbox:checked + .navi-button .navi-icon::after{
+  top: 0;
+  transform: rotate(-135deg);
+}
+
+
+.navigation .navi-checkbox{
+display: none;
+}
+.navigation .navi-button{
+background-color: #fff;
+height: 7rem;
+width: 7rem;
+position: fixed;
+top: 6rem;
+right: 6rem;
+border-radius: 50%;
+z-index: 2000;
+box-shadow: 0 1rem 3rem rgba(0,0,0,.1);
+text-align: center;
+cursor: pointer;
+}
+.navigation .navi-background{
+  /* 2c3e50 */
+  /* 2d3436 */
+  /* 4d4855 */
+background-image: linear-gradient(to right, #000000 , #2d3436 74%);
+
+
+height: 6rem;
+width: 6rem;
+border-radius: 50%;
+position: fixed;
+top: 6.5rem;
+right: 6.5rem;
+
+/* starts from middle and goes evrywhr */
+z-index: 1000;
+/* transform: scale(80); */
+transition: transform .8s cubic-bezier(0.86,0,0.07,1);
+}
+.navigation .navi-nav{
+  height: 100vh;
+  /* width: 100%; */
+  position: fixed;
+  top: 0rem;
+  left: 0rem;
+  z-index: 1500;
+  opacity: 0;
+  width: 0;
+  transition: all .8s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+.navigation .navi-list{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+list-style: none;
+/* width: 100% */
+}
+.navigation .navi-item{
+margin: 1rem;
+}
+
+.navigation .navi-link:link,.navi-link:visited{
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(120deg,transparent 0%,transparent 50%,#fff 50%);
+  background-size: 230%;
+  transition: all .4s;
+}
+.navigation .navi-link span{
+margin-right: 1.5rem;
+display: inline-block;
+}
+.navigation .navi-link:hover,.navi-link:active{
+  background-position: 100%;
+  color: rgb(173, 152, 108);
+  transform: translateX(1rem);
+}
+ .navigation .navi-checkbox:checked ~ .navi-background{ /*~ sibling selector */
+transform: scale(80);
+}
+.navigation .navi-checkbox:checked ~ .navi-nav{
+opacity: 1;
+width: 100%;
+}
+
+/* nav */
+.header{
+  height: 95vh;
+  /* % of view port height */
+
+  background-image:linear-gradient(to right bottom,rgba(0, 0, 0, 0.8),rgba(65, 65, 65, 0.8)),url("images/mainC.jpg");
+  background-size: cover;
+  /* cover----- // filll completely */
+background-position: top;
+/* top of the image always stayes wouldnt be cropped */
+/* -webkit-clip-path:polygon(0 0, 100% 0%,100% 75vh ,0 100%);
+clip-path:polygon(0 0, 100% 0%,100% 75vh ,0 100%); */
+/* orgin is top left corner */
+position: relative;
+}
+.logo-box{
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+.logo{
+  height: 6.1rem;
+
+}
+/* .logo:hover{
+  animation: moveInRight 1s ease-out;
+} */
+
+
+
+.text-box{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+transform: translate(-50%,-50%);
+/* wrt item itself */
+text-align: center;
+}
+.crown{
+  display:inline-block;
+    height: 42.8487px;
+  width: 72.4713px;
+
+}
+.crownA{
+  display:inline-block;
+    height: 42.8487px;
+  width: 72.4713px;
+
+  animation-name: logoMove;
+  animation-duration: 3s;
+  backface-visibility: hidden;
+  /* animation-delay: 1s; */
+  /* animation-iteration-count: 2; */
+  /* animation-timing-function: ease-out; */
+}
+.crown1{
+   transform: translate(-361%, 53%) rotate(0deg);
+}
+.crown2{
+   transform: translate(400%, -50%) rotate(0deg);
+}
+.crown3{
+   transform: translate(458%, -50%) rotate(0deg);
+}
+
+
+.heading-primary{
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /* to avoid as shake after animation */
+  margin-bottom: 6rem;
+}
+.heading-primary-main{
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation: moveInLeft 1s ease-out;
+}
+.heading-primary-sub{
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.75rem;
+  animation-name: moveInRight;
+  animation-duration: 1s;
+  /* animation-delay: 1s; */
+  /* animation-iteration-count: 2; */
+  animation-timing-function: ease-out;
+  /* starts slow n proceeds fasts */
+}
+
+
+.heading-three{
+
+  color: rgb(173, 152, 108);
+padding-left: 14rem;
+
+  margin-bottom: 6rem;
+}
+.heading-three-main{
+  font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+  display: block;
+  font-size: 4rem;
+  font-weight: 400;
+
+}
+.heading-three-sub{
+  font-family: 'Cormorant Garamond', serif;
+  color: rgb(53, 47, 40);
+  display: block;
+  font-size:3rem;
+font-weight: 500;
+padding-left: 4px;
+
+}
+
+.heading-sub-right{
+ padding-left: 61rem;
+}
+
+.heading-four{
+  font-family: 'Nunito', sans-serif;
+  color:#ffa69e;
+  display: block;
+  font-size:5rem;
+font-weight: 500;
+padding-left: 4px;
+}
+/* keyframes */
+
+@keyframes moveInLeft {
+  0%{
+    opacity: 0;
+    transform: translateX(-10rem) /*rotate(0deg);*/
+    /* default direction: left to right and top to bottom */
+  }
+  /* 60%{
+    transform: rotate(180deg);
+  } */
+  80%{
+    transform: translateX(1.5rem) /*rotate(180deg);*/;
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0) /*rotate(0deg)*/;
+  }
+}
+
+@keyframes moveInRight {
+  0%{
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80%{
+    transform: translate(-1.5rem);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes buttonUp{
+  0%{
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes logoMove {
+  0%{
+    opacity: 0;
+
+transform: translateX(30rem)  translateY(2.265rem);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+      transform: translateX(-26.16rem) translateY(2.265rem);
+
+  }
+}
+
+
+/* keyframes */
+/* pseudo classes are a special state of a selector */
+.btn,.btn:link,.btn:visited{
+   text-transform: uppercase;
+   text-decoration: none;
+   padding: 1.5rem 4rem;
+   display: inline-block; /* to get some space btw primary-sub n btn  */
+   border-radius: 10rem;
+   transition: all 0.2s;
+   /* all aniamtions with 0.2 duration */
+   position: relative;
+font-size: 1.6rem;
+/* //changes for button element */
+border: none;
+cursor: pointer;
+}
+.btn:hover{
+transform: translateY(-3px);
+box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+/* x offset y offset blur shadow */
+}
+ .btn:active,.btn:focus{ /* for radio down thing  */
+   outline: none;/* for radio down thing  */
+  transform: translateY(-1px);
+  /* active is when v cick the button */
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+}
+.btn-white{
+  background-color: #fff;
+  color: #777;
+}
+.btn-white::after{
+background-color: #fff;
+}
+.btn-green{
+  background-color: #2b4162;
+
+  color: #fff;
+}
+.btn-green::after{
+background-color: rgba(43, 65, 98, 0.72);
+}
+
+.btn::after{  /* trick is make exact button and keep behind original button. This is child of original button so heigth n width 100%    */
+  content: "";
+  display: inline-block;
+  /* must */
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  /* to simply put behind original button  and make parent relative*/
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+  /* transition: property always keep at initial stages */
+}
+
+
+.btn:hover::after{
+  /* i want to see after  only on hover */
+  /* transform: scale(1.5); /* 1.5 times  the size  */
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0; /* to fade out  */
+
+}
+.btn-ani{
+   animation:buttonUp .5s ease-out .75s /* animation delay */;
+   animation-fill-mode: backwards;
+   /* simply adds 0% before the animation starts   */
+}
+
+
+.btn-textt:link,.btn-textt:visited{
+  font-size: 1.6rem;
+  color:#D4AF37;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #D4AF37;  ; /* our own botton line */
+  padding: 3px 20px;
+  /* padding btw text and line */
+}
+.btn-textt:hover{
+ background-color: #D4AF37;
+ color: #fff;
+ box-shadow: 0 1rem 2rem rgba(0,0,0,.15);
+ transform: translateY(-2px);
+}
+.btn-textt:active{
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  transform: translateY(-2px);
+  margin-top: 10px;
+}
+.bttn,.bttn:link,.bttn:visited{
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block; /* to get some space btw primary-sub n btn  */
+  border-radius: 10rem;
+  transition: all 0.2s;
+  /* all aniamtions with 0.2 duration */
+  position: relative;
+  font-size: 1.6rem;
+  /* //changes for button element */
+  border: none;
+  cursor: pointer;
+  background-color: #fff;
+  color: #777;
+}
+
+.extra{
+  transform: translateX(449px);
+margin: 44px
+}
+/* section 1 */
+
+.section-about{
+  background-color: #f7f7f7;
+  padding: 25rem 0 ;
+
+  margin-top: 1vh;
+  /* height: 100rem; */
+}
+
+.heading-secondary{
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 3.5rem;
+
+
+  display: inline-block;
+  background-image: linear-gradient(to right,#ffa69e,#5d4954 );
+
+  -webkit-background-clip:text;
+  /* clips completele background only for text */
+  /* to see text now make text trasparent */
+  color: transparent;
+
+padding : 1.1rem 0;
+  letter-spacing: .2rem;
+
+}
+
+.u-center-text{
+  text-align: center;
+}
+
+
+/* composition photo */
+
+.composition{
+  position: relative;
+}
+.composition-photo{
+  width: 55%;
+  box-shadow: 0 1.5rem 4rem rgba(0,0,0,.4);
+  /* border-radius: 2px; */
+  position: absolute;
+  transition: all .2s;
+  z-index: 15;
+  outline-offset: 1.5rem;
+
+}
+.composition-photo-p1{
+  left: 0;
+  top: -2rem;
+}
+.composition-photo-p2{
+right: 0;
+top:2rem;
+}
+.composition-photo-p3{
+left: 20%;
+top:10rem;
+}
+.composition-photo:hover{
+  outline: 1.5rem solid #b08f26;
+  transform: scale(1.05) translateY(-.5rem);
+  box-shadow: 0 2.5rem 4rem rgba(0,0,0,.5);
+  z-index: 30;
+}
+.composition:hover .composition-photo:not(:hover){
+  transform: scale(.95);
+}
+/* composition photo */
+
+
+/* grid */
+.row{
+  max-width: 114rem;
+  /* background-color: #eee; */
+  margin: 0 auto;
+}
+.row .row:not(:last-child){
+  margin-bottom: 8rem;
+}
+.row [class^="col-"]{
+  float: left;
+}
+
+.row::after{
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.row .col-1-of-2{
+  width: calc((100% - 6rem)/2);
+
+}
+.row .col-1-of-2:not(:last-child){
+  margin-right: 6rem;
+}
+.row .col-1-of-3{
+  width: calc((100% -3*6rem)/4);
+
+}
+.row .col-1-of-3:not(:last-child){
+  margin-right: 13rem;
+}
+.row .col-1-of-4{
+  width:calc((100%-4*6rem)/5);
+  /* 6rem is space btw two blocks */
+
+}
+.row .col-1-of-4:not(:last-child){
+  margin-right: 6rem;
+}
+
+/* grid */
+
+/* margins */
+
+.margin-8 {
+  margin-bottom: 8rem !important;
+}
+.margin-3{
+  margin-bottom: 2rem;
+}
+.margin-top-10{
+  margin-top: 10rem;
+}
+.heading-tertiary{
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.paragraph{
+  font-size: 1.6rem;
+}
+.paragraph:not(:last-child){
+  margin-bottom: 3rem;
+}
+.margin-2{
+  margin-bottom: 1.5rem;
+}
+
+
+
+
+/* margin */
+
+/* cards */
+
+.section-tours{
+  background-color: #f7f7f7;
+  padding: 25rem 0 15rem 0;
+  margin-top: -10rem;
+  /* to move up */
+}
+.card{
+  perspective: 150rem;
+  /* to move towards u */
+  -moz-perspective:150rem;
+  /* for firefox */
+  position: relative;
+  height: 52rem;
+  /* for clearfix  onlt for floats its clearfix and for absolute its specify same height*/
+}
+.card .card-side{
+
+  height: 52rem;
+  transition: all .8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* cuz it got shrinked */
+  backface-visibility: hidden;
+  /* to fix aniamtion glich */
+  /* now card height gone */
+  border-radius: 3px;
+  overflow: hidden;
+  /* images is overflowing parent so to see radius use this */
+  box-shadow: 0 1.5rem 4rem rgba(0,0,0,0.15);
+}
+.card .card-side-front{
+  background-color: #fff;
+}
+.card .card-side-back-1{
+  background-image: linear-gradient(to right bottom, rgba(117, 98, 19, 0.8),rgba(0, 0, 0, 0.81));
+    transform: rotateY(180deg);
+
+}
+.card .card-side-back-2{
+  background-image: linear-gradient(to right bottom, #7f8c8d,#000000);
+    transform: rotateY(180deg);
+
+}
+.card .card-side-back-3{
+  background-image: linear-gradient(to right bottom,#7ed6df, #000000 );
+    transform: rotateY(180deg);
+
+}
+.card:hover .card-side-front{
+  transform: rotateY(-180deg);
+}
+.card:hover .card-side-back{
+  transform: rotateY(0deg);
+}
+.card .card-picture{
+  background-size: cover;
+  height: 23rem;
+  background-blend-mode: screen;
+  -webkit-clip-path:polygon(0 0, 100% 0,100% 85%,0 100%);
+  /* to support other browers */
+  clip-path: polygon(0 0, 100% 0,100% 85%,0 100%);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  /* overflow: hidden; not works herre */
+  /* for round corner */
+  }
+.card .p-1{
+
+  background-image: linear-gradient(to right bottom, rgba(117, 98, 19, 0.8),rgba(0, 0, 0, 0.81)),url("images/room1.png");
+}
+.card .p-2{
+
+  background-image: linear-gradient(to right bottom,#7f8c8d,#000000),url("images/room2.png");
+
+}
+.card .p-3{
+
+  background-image: linear-gradient(to right bottom,#7ed6df, #000000 ),url("images/room3.png");
+
+}
+.card .card-heading{
+  font-size: 2.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: right;
+  color: #fff;
+  position: absolute;
+  top:12rem;
+  right: 2rem;
+  width: 75%;
+}
+.card .card-head-span{
+padding: 1rem 1.5rem;
+-webkit-box-decoration-break: clone;
+/* makes one padding to separete boxes */
+box-decoration-break: clone;
+}
+.card .card-head-span-1{
+  background-image: linear-gradient(to right bottom,#756213,#000000);
+}
+.card .card-head-span-2{
+  background-image: linear-gradient(to right bottom,#7f8c8d,#000000);
+}
+.card .card-head-span-3{
+  background-image: linear-gradient(to right bottom,#7ed6df, #000000);
+}
+.card .card-details{
+padding: 3rem;
+}
+.card .card-details ul{
+  list-style: none;
+  width: 80%;
+  margin: 0 auto;
+}
+.card .card-details li{
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.card .card-details li:not(:last-child){
+  border-bottom: 1px solid #eee;
+}
+.card .card-cta{
+  position: absolute;
+  top: 50%;
+  left: 50%;/* this is wrt parent */
+  transform: translate(-50% , -50%);/* this is wrt current block */
+  width: 90%;
+  text-align: center;
+}
+.card .card-price-box{
+
+color: #fff;
+margin-bottom: 8rem;
+}
+.card .card-price-only{
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+.card .card-price-value{
+  font-size: 6rem;
+  font-weight: 100;
+}
+
+
+
+
+
+
+.section-stories{
+  /* background-color: #fff;  if u keep it then ur video wont apper*/
+  padding: 15rem 0;
+backface-visibility: hidden;
+position: relative;
+}
+.section-stories .story{
+  width:75%;
+  margin: 4rem auto;
+box-shadow: 0 3rem 6rem rgba(0,0,0,.1);
+  background-color: rgba(255,255,255,0.6);
+  /* to make it trasparent to show up video on stories */
+  /* 60% */
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  transform: skewX(-12deg);
+  backface-visibility: hidden;
+}
+.story .story_shape{
+  width: 15rem;
+  height: 15rem;
+
+   float: left;  /*(for float heigth and width should be there) */
+  -webkit-shape-outside:circle(50% at 50% 50%);
+ shape-outside: circle(50% at 50% 50%);  /*radius (%50 of 15  ) at   */
+/* shape outside defines where the content floats around the element */
+-web-kit-clip-path:circle(50% at 50% 50%);
+clip-path:circle(50% at 50% 50%);
+/* to get the gap between float use transform */
+transform: translateX(-3rem) skewX(12deg);
+position: relative;
+backface-visibility: hidden;
+}
+.story-img{
+  height:  100%;
+  transform: translateX(-3.9rem) scale(1.4);
+  backface-visibility: hidden;
+  transition: all .5s;
+  /* to fix some bugs */
+}
+.story_text{
+transform:  skewX(12deg);
+backface-visibility: hidden;
+}
+
+
+
+.bg-video{
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+z-index: -1;
+/* to show up buttons */
+opacity: .15;
+overflow: hidden;
+}
+.bg-video .bg-video-content{
+/* to make video exactly fit */
+height: 100%;
+width: 100%;
+object-fit: cover;
+/* vil fill entire parent while still maintaining its aspect ratio  */
+/* its like background-size: cover; this is for images*/
+/* object-fit: cover; fills parent element top to bottom clipping on the side what is too much  */
+}
+
+
+
+
+/* cards */
+
+
+
+.section-book{
+  padding :15rem 0;
+  background-image: linear-gradient(to right bottom,#000000,#7ed6df);
+
+}
+.section-book .book{
+  /* background-color on top of image? use solid color gradient */
+background-image: linear-gradient(105deg,
+                  rgba(225,225,225,.9) 0%,
+                  rgba(225,225,225,.9) 50%,
+                 transparent 50%),
+                url("images/form1.webp");
+background-size: 100%;
+/* its like cover */
+height:  52rem;
+border-radius: 3px;
+box-shadow: 0 1.5rem 4rem rgba(1,1,1,.2);
+
+
+}
+.section-book .book-form{
+  width: 50%;
+  padding: 6rem;
+}
+form{
+
+}
+form .form-group:not(:last-child){
+margin-bottom: 2rem;
+}
+form .form-input{
+  color: inherit;
+  font-size: 1.5rem;
+  font-family: inherit;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: #fff;
+  border: none;
+border-bottom: 3px solid transparent;
+/* to align perfectly */
+width: 90%;
+display: block;
+transition: all .3s;
+}
+
+ form .form-input:focus{  /*to chage border (when v click border vil come na) */
+outline: none;
+box-shadow: 0 1rem 2rem rgba(1,1,1,.1);
+border-bottom: 3px solid #7ed56f;
+}
+ form .form-input:focus:invalid{
+   border-bottom: 3px solid #ff7730;
+ }
+ /* to change colour if invalid input */
+form .form-input::-webkit-input-placeholder{
+  color: #999;
+}
+form .form-label{
+font-size: 1.2rem;
+font-weight: 700;
+margin-left: 2rem;
+margin-top: .7rem;
+display: block;
+/* to use all properties v r keeping block */
+transition: all .3s;
+}
+form .form-input:placeholder-shown + .form-label{ /*  +(silbling selector) is to select adjacent sibiling */
+  opacity: 0;
+  visibility: hidden;
+  /* v cannot animate visibility so opacity also there */
+  transform: translateY(-4rem);
+/* simply if v start writing these opacity and visibility vil be gone */
+}
+
+
+
+.button-8:hover,
+.button-8:focus {
+  background-color: #b3d3ea;
+  color: #2c5777;
+}
+
+.button-8:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.button-8:active {
+  background-color: #a0c7e4;
+  box-shadow: none;
+  color: #2c5777;
+}
+
+
+
+
+
+.footer{
+  background-color: #000;
+  padding: 10rem 0;
+  font-size: 1.4rem;
+  color: #f7f7f7;
+}
+.footer-logo-box{
+text-align: center;
+margin-bottom: 8rem;
+}
+.footer-logo{
+width: 15rem;
+height: auto;
+}
+.footer-navigation{
+border-top: 1px solid #777;
+padding: 2rem;
+display: inline-block;
+/* to cut the line left and right */
+}
+.footer-list{
+list-style: none;
+}
+.footer-items{
+display: inline-block;
+}
+.footer-items:not(:last-child){
+margin-right: 1.5rem;
+}
+.footer-link:link,.footer-link:visited{
+  background-color: #333;
+color: #f7f7f7;
+text-decoration: none;
+text-transform: uppercase;
+display: inline-block;
+transition: all .2s;
+}
+.footer-link:hover,.footer-link:active{
+  color: rgb(173, 152, 108);
+  box-shadow: 0 1rem 2rem rgba(1,1,1,.4);
+  transform: rotate(5deg) scale(1.3);
+}
+.footer-copyright{
+  border-top: 1px solid #777;
+  padding: 2rem;
+width: 80%;
+float: right;
+}
+
+
+
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
